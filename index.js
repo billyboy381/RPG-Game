@@ -8,6 +8,11 @@ const keyCode = { //Key codes to handle presses
     down: 40,
     space: 32,
     r: 82
+const el = document.querySelector("canvas");
+el.addEventListener("touchstart", handleStart);
+el.addEventListener("touchmove", handleMove);
+el.addEventListener("touchend", handleEnd);
+el.addEventListener("touchcancel", handleCancel);
 }
 canvas = document.getElementById('canvas'); //Get canvas element
 var framesByImage = 5; //The number of frames until the sprite image of the movement character changes
