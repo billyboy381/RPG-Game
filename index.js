@@ -1,6 +1,24 @@
 var canvas; //Declare canvas
 var context; //Declare context
 var keys = {}; //Initialize key object for storing the keys that are being pressed at the moment
+var touchedElement = document.getElementById("myElementToBeTouched");
+  touchedElement.addEventListener("touchstart", funcTouchStart, false);
+  touchedElement.addEventListener("touchend", funcTouchEnd, false);
+  touchedElement.addEventListener("touchmove", funcTouchMove, false);
+
+  function funcTouchStart(e) {
+    //code to do what you want like set variables and check where on screen touch happened
+
+    var touches = e.changedTouches; //gets array of touch points, to get position
+  }
+
+  function funcTouchEnd(e) {
+    //code
+  }
+
+  function funcTouchMove(e) {
+    //code
+  }
 const keyCode = { //Key codes to handle presses
     left: 37,
     up: 38,
@@ -8,11 +26,6 @@ const keyCode = { //Key codes to handle presses
     down: 40,
     space: 32,
     r: 82
-const el = document.querySelector("canvas");
-el.addEventListener("touchstart", handleStart);
-el.addEventListener("touchmove", handleMove);
-el.addEventListener("touchend", handleEnd);
-el.addEventListener("touchcancel", handleCancel);
 }
 canvas = document.getElementById('canvas'); //Get canvas element
 var framesByImage = 5; //The number of frames until the sprite image of the movement character changes
